@@ -11,9 +11,9 @@ namespace E_learning_Inheritance_Task2
     {
         static void Main(string[] args)
         {
-            Automobile a = new Automobile("TOTOTA", "lc", (Colors)2, 23, 2.7);
+            //Automobile a = new Truck("TOTOTA", "lc", (Colors)2, 23, 2.7);
 
-            Console.WriteLine(a.CalculateFuelConsumption(60));
+            //Console.WriteLine(a.CalculateFuelConsumption(60));
             Console.ReadKey();
         }
     }

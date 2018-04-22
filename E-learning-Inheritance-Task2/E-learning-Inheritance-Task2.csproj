@@ -49,6 +49,7 @@
     <Compile Include="Classes\Utils.cs" />
     <Compile Include="Enumerations\Colors.cs" />
     <Compile Include="Enumerations\ExhaustSystemsBrands.cs" />
+    <Compile Include="Enumerations\TrailerWeightTypes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
