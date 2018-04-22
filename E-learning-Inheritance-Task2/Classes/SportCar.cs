@@ -9,7 +9,7 @@ namespace E_learning_Inheritance_Task2.Classes
 {
     public class SportCar : Automobile
     {
-        private string exhaustSystemBrand;
+        private ExhaustSystemsBrands exhaustSystemBrand;
 
         public SportCar(
             string _brand,
@@ -17,7 +17,7 @@ namespace E_learning_Inheritance_Task2.Classes
             Colors _color,
             double _fuelConsumption,
             double _engineCapacity,
-            string _exhaustSystemBrand) 
+            ExhaustSystemsBrands _exhaustSystemBrand) 
             : base(_brand, _model, _color, _fuelConsumption, _engineCapacity)
         {
             this.exhaustSystemBrand = _exhaustSystemBrand;
