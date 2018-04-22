@@ -1,9 +1,6 @@
-﻿using E_learning_Inheritance_Task2.Enumerations;
+﻿using E_learning_Inheritance_Task2.Classes;
+using E_learning_Inheritance_Task2.Enumerations;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace E_learning_Inheritance_Task2
 {
@@ -13,25 +10,34 @@ namespace E_learning_Inheritance_Task2
         private string model;
         private Colors color;
         private Guid vin;
-        private double fuelConsumption;
+        private double horsepowers;
         private double engineCapacity;
 
         public Automobile(
             string _brand,
             string _model,
             Colors _color,
-            double _fuelConsumption,
+            double _horsepowers,
             double _engineCapacity)
         {
             this.brand = _brand;
             this.model = _model;
             this.color = _color;
             this.vin = Guid.NewGuid();
-            this.fuelConsumption = _fuelConsumption;
+            this.horsepowers = _horsepowers;
             this.engineCapacity = _engineCapacity;
         }
 
-        public abstract double CalculateFuelConsumption(double averageSpeed);
+        public virtual double CalculateFuelConsumption(double averageSpeed)
+        {
+            var watts = Utils.HpsToWatt(this.horsepowers);
+            var distance = Utils.KilometersToMeters(1);
+            var speed = Utils.KilometersPerHourToMetersPerSecond(averageSpeed);
+            var ece = Utils.EnrgyConversionEfficiency(this.horsepowers, this.engineCapacity);
+
+            var result = watts * distance / (speed * ece * Utils.benzinHeatOfCombustion);
+            return result;
+        }
 
         public int CompareTo(Automobile other)
         {

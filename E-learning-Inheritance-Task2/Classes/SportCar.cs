@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using E_learning_Inheritance_Task2.Enumerations;
+﻿using E_learning_Inheritance_Task2.Enumerations;
 
 namespace E_learning_Inheritance_Task2.Classes
 {
@@ -15,17 +10,17 @@ namespace E_learning_Inheritance_Task2.Classes
             string _brand,
             string _model,
             Colors _color,
-            double _fuelConsumption,
+            double _horsepowers,
             double _engineCapacity,
-            ExhaustSystemsBrands _exhaustSystemBrand) 
-            : base(_brand, _model, _color, _fuelConsumption, _engineCapacity)
+            ExhaustSystemsBrands _exhaustSystemBrand)
+            : base(_brand, _model, _color, _horsepowers, _engineCapacity)
         {
             this.exhaustSystemBrand = _exhaustSystemBrand;
         }
 
         public override double CalculateFuelConsumption(double averageSpeed)
         {
-            throw new NotImplementedException();
+            return base.CalculateFuelConsumption(averageSpeed) * ExhaustSystems.GetCoefficient(exhaustSystemBrand);
         }
     }
 }
