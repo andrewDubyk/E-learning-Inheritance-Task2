@@ -1,4 +1,5 @@
 ﻿using E_learning_Inheritance_Task2.Enumerations;
+using System;
 
 namespace E_learning_Inheritance_Task2.Classes
 {
@@ -23,6 +24,11 @@ namespace E_learning_Inheritance_Task2.Classes
         public override double CalculateFuelConsumption(double averageSpeed)
         {
             return base.CalculateFuelConsumption(averageSpeed) * ExhaustSystems.GetCoefficient(exhaustSystemBrand);
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + string.Format($"exhaustSystemBrand : {Enum.GetName(typeof(ExhaustSystemsBrands), this.exhaustSystemBrand)}\n");
         }
     }
 }

@@ -4,16 +4,16 @@ using System;
 
 namespace E_learning_Inheritance_Task2
 {
-    public abstract class Automobile : IComparable<Automobile>
+    public abstract class Automobile
     {
-        private string brand;
-        private string model;
-        private Colors color;
-        private Guid vin;
-        private FuelTypes fuel;
-        private uint maxSpeed;
-        private double horsepowers;
-        private double engineCapacity;
+        public string Brand { get; private set; }
+        public string Model { get; private set; }
+        public Colors Color { get; private set; }
+        public Guid Vin { get; private set; }
+        public FuelTypes Fuel { get; private set; }
+        public uint MaxSpeed { get; private set; }
+        public double Horsepowers { get; private set; }
+        public double EngineCapacity { get; private set; }
 
         public Automobile(
             string _brand,
@@ -24,30 +24,37 @@ namespace E_learning_Inheritance_Task2
             double _horsepowers,
             double _engineCapacity)
         {
-            this.brand = _brand;
-            this.model = _model;
-            this.color = _color;
-            this.vin = Guid.NewGuid();
-            this.fuel = _fuel;
-            this.maxSpeed = _maxSpeed;
-            this.horsepowers = _horsepowers;
-            this.engineCapacity = _engineCapacity;
+            this.Brand = _brand;
+            this.Model = _model;
+            this.Color = _color;
+            this.Vin = Guid.NewGuid();
+            this.Fuel = _fuel;
+            this.MaxSpeed = _maxSpeed;
+            this.Horsepowers = _horsepowers;
+            this.EngineCapacity = _engineCapacity;
         }
 
         public virtual double CalculateFuelConsumption(double averageSpeed)
         {
-            var watts = Utils.HpsToWatt(this.horsepowers);
+            var watts = Utils.HpsToWatt(this.Horsepowers);
             var distance = Utils.KilometersToMeters(1);
             var speed = Utils.KilometersPerHourToMetersPerSecond(averageSpeed);
-            var ece = Utils.EnrgyConversionEfficiency(this.horsepowers, this.engineCapacity);
+            var ece = Utils.EnrgyConversionEfficiency(this.Horsepowers, this.EngineCapacity);
 
             var result = watts * distance / (speed * ece * Utils.benzinHeatOfCombustion);
             return result;
         }
 
-        public int CompareTo(Automobile other)
+        public override string ToString()
         {
-            return this.engineCapacity.CompareTo(other.engineCapacity);
+            return string.Format(
+                $"brand : {this.Brand}\n" +
+                $"model : {this.Model}\n" +
+                $"color : {Enum.GetName(typeof(Colors),this.Color)}\n" +
+                $"fule : {Enum.GetName(typeof(FuelTypes),this.Fuel)}\n" +
+                $"max speed : {this.MaxSpeed}\n" +
+                $"horse powers : {this.Horsepowers}\n" +
+                $"engine capactiy : {this.EngineCapacity}\n");
         }
     }
 }

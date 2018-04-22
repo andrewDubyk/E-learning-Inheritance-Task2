@@ -46,9 +46,11 @@
     <Compile Include="Classes\Car.cs" />
     <Compile Include="Classes\SportCar.cs" />
     <Compile Include="Classes\Truck.cs" />
-    <Compile Include="Classes\Utils.cs" />
+    <Compile Include="Task.cs" />
+    <Compile Include="Utils.cs" />
     <Compile Include="Enumerations\Colors.cs" />
     <Compile Include="Enumerations\ExhaustSystemsBrands.cs" />
+    <Compile Include="Enumerations\FuelTypes.cs" />
     <Compile Include="Enumerations\TrailerWeightTypes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

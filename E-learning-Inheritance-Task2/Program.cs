@@ -1,9 +1,7 @@
-﻿using E_learning_Inheritance_Task2.Enumerations;
+﻿using E_learning_Inheritance_Task2.Classes;
+using E_learning_Inheritance_Task2.Enumerations;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace E_learning_Inheritance_Task2
 {
@@ -11,9 +9,24 @@ namespace E_learning_Inheritance_Task2
     {
         static void Main(string[] args)
         {
-            //Automobile a = new Truck("TOTOTA", "lc", (Colors)2, 23, 2.7);
+            List<Automobile> automobiles = new List<Automobile>
+            {
+                {new Truck("volvo","fx23",(Colors)2,(FuelTypes)1,800,430,2,(TrailerWeightTypes)2)},
+                {new SportCar("nissan","gtr",(Colors)4,(FuelTypes)0,200,480,2,(ExhaustSystemsBrands)2)},
+                {new SportCar("ford","mustang",(Colors)3,(FuelTypes)1,230,380,2.4,(ExhaustSystemsBrands)5)}
+            };
 
-            //Console.WriteLine(a.CalculateFuelConsumption(60));
+            
+            Console.WriteLine("\t\t\t The most economical \n");
+            Console.WriteLine(Task.FindEconomical(automobiles,23));
+
+            Console.WriteLine("\t\t\t The fastest \n");
+            Console.WriteLine(Task.FindTheFastest(automobiles));
+
+            Task.SortByEnginePower(automobiles);
+            Console.WriteLine("\t\t\t Automobiles sorted by hourspowers \n");
+            Task.Print(automobiles);
+
             Console.ReadKey();
         }
     }

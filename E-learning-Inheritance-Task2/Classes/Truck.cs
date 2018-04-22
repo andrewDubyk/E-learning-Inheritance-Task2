@@ -12,10 +12,10 @@ namespace E_learning_Inheritance_Task2.Classes
             Colors _color,
             FuelTypes _fuel,
             uint _maxSpeed,
-            double _fuelConsumption,
+            double _horsepowers,
             double _engineCapacity,
             TrailerWeightTypes _trailerWeightType)
-            : base(_brand, _model, _color, _fuel, _maxSpeed, _fuelConsumption, _engineCapacity)
+            : base(_brand, _model, _color, _fuel, _maxSpeed, _horsepowers, _engineCapacity)
         {
             this.trailerWeightType = _trailerWeightType;
         }
