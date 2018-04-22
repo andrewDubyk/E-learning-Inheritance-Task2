@@ -10,6 +10,8 @@ namespace E_learning_Inheritance_Task2
         private string model;
         private Colors color;
         private Guid vin;
+        private FuelTypes fuel;
+        private uint maxSpeed;
         private double horsepowers;
         private double engineCapacity;
 
@@ -17,6 +19,8 @@ namespace E_learning_Inheritance_Task2
             string _brand,
             string _model,
             Colors _color,
+            FuelTypes _fuel,
+            uint _maxSpeed,
             double _horsepowers,
             double _engineCapacity)
         {
@@ -24,6 +28,8 @@ namespace E_learning_Inheritance_Task2
             this.model = _model;
             this.color = _color;
             this.vin = Guid.NewGuid();
+            this.fuel = _fuel;
+            this.maxSpeed = _maxSpeed;
             this.horsepowers = _horsepowers;
             this.engineCapacity = _engineCapacity;
         }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using E_learning_Inheritance_Task2.Enumerations;
+﻿using E_learning_Inheritance_Task2.Enumerations;
 
 namespace E_learning_Inheritance_Task2.Classes
 {
@@ -15,10 +10,12 @@ namespace E_learning_Inheritance_Task2.Classes
             string _brand,
             string _model,
             Colors _color,
+            FuelTypes _fuel,
+            uint _maxSpeed,
             double _fuelConsumption,
             double _engineCapacity,
             TrailerWeightTypes _trailerWeightType)
-            : base(_brand, _model, _color, _fuelConsumption, _engineCapacity)
+            : base(_brand, _model, _color, _fuel, _maxSpeed, _fuelConsumption, _engineCapacity)
         {
             this.trailerWeightType = _trailerWeightType;
         }

@@ -10,10 +10,12 @@ namespace E_learning_Inheritance_Task2.Classes
             string _brand,
             string _model,
             Colors _color,
+            FuelTypes _fuel,
+            uint _maxSpeed,
             double _horsepowers,
             double _engineCapacity,
             ExhaustSystemsBrands _exhaustSystemBrand)
-            : base(_brand, _model, _color, _horsepowers, _engineCapacity)
+            : base(_brand, _model, _color, _fuel, _maxSpeed, _horsepowers, _engineCapacity)
         {
             this.exhaustSystemBrand = _exhaustSystemBrand;
         }
