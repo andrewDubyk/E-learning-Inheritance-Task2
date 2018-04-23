@@ -33,14 +33,22 @@ namespace E_learning_Inheritance_Task2.Classes
 
         public override bool Equals(Object obj)
         {
-            if (obj is SportCar)
+            var item = obj as SportCar;
+
+            if (item == null)
             {
-                var that = obj as SportCar;
-                return this.Equals(that) && this.exhaustSystemBrand == that.exhaustSystemBrand;
+                return false;
             }
 
-            return false;
+            return base.Equals(item) && this.exhaustSystemBrand == item.exhaustSystemBrand; ;
         }
 
+        public override int GetHashCode()
+        {
+            var hashCode = 177775825;
+            hashCode = hashCode * -1521134295 + base.GetHashCode();
+            hashCode = hashCode * -1521134295 + exhaustSystemBrand.GetHashCode();
+            return hashCode;
+        }
     }
 }

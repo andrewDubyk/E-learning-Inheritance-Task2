@@ -16,8 +16,6 @@ namespace E_learning_Inheritance_Task2
                 {new SportCar("ford","mustang",(Colors)3,(FuelTypes)1,230,380,2.4,(ExhaustSystemsBrands)5)}
             };
 
-
-
             Console.WriteLine("\t\t\t The most economical \n");
             Console.WriteLine(Task.FindEconomical(automobiles, 80));
 
@@ -28,12 +26,10 @@ namespace E_learning_Inheritance_Task2
             Console.WriteLine("\t\t\t Automobiles sorted by hourspowers \n");
             Task.Print(automobiles);
 
-
             foreach(var a in automobiles)
             {
                 Console.WriteLine(a.CalculateFuelConsumption(80));
             }
-
 
             Console.ReadKey();
         }

@@ -1,4 +1,5 @@
 ﻿using E_learning_Inheritance_Task2.Enumerations;
+using System;
 
 namespace E_learning_Inheritance_Task2.Classes
 {
@@ -25,15 +26,24 @@ namespace E_learning_Inheritance_Task2.Classes
             return base.CalculateFuelConsumption(averageSpeed) * WeightTypes.GetCoefficient(trailerWeightType);
         }
 
-        //public override bool Equals(Object obj)
-        //{
-        //    if (obj is Truck)
-        //    {
-        //        var that = obj as Truck;
-        //        return this.Equals(that) && this.trailerWeightType == that.trailerWeightType;
-        //    }
+        public override bool Equals(Object obj)
+        {
+            var item = obj as Truck;
 
-        //    return false;
-        //}
+            if (item == null)
+            {
+                return false;
+            }
+
+            return base.Equals(item) && this.trailerWeightType == item.trailerWeightType ;
+        }
+
+        public override int GetHashCode()
+        {
+            var hashCode = -1619085688;
+            hashCode = hashCode * -1521134295 + base.GetHashCode();
+            hashCode = hashCode * -1521134295 + trailerWeightType.GetHashCode();
+            return hashCode;
+        }
     }
 }

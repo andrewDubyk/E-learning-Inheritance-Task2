@@ -50,8 +50,8 @@ namespace E_learning_Inheritance_Task2
             return string.Format(
                 $"brand : {this.Brand}\n" +
                 $"model : {this.Model}\n" +
-                $"color : {Enum.GetName(typeof(Colors),this.Color)}\n" +
-                $"fule : {Enum.GetName(typeof(FuelTypes),this.Fuel)}\n" +
+                $"color : {Enum.GetName(typeof(Colors), this.Color)}\n" +
+                $"fule : {Enum.GetName(typeof(FuelTypes), this.Fuel)}\n" +
                 $"max speed : {this.MaxSpeed}\n" +
                 $"horse powers : {this.Horsepowers}\n" +
                 $"engine capactiy : {this.EngineCapacity}\n");
@@ -59,17 +59,30 @@ namespace E_learning_Inheritance_Task2
 
         public override bool Equals(Object obj)
         {
-            if (obj is Automobile)
+            var item = obj as Automobile;
+
+            if (item == null)
             {
-                var that = obj as Automobile;
-                return this.Brand == that.Brand && this.Model == that.Model && this.Color == that.Color
-                    && this.Vin == that.Vin && this.Fuel == that.Fuel && this.MaxSpeed == that.MaxSpeed
-                    && this.Horsepowers == that.Horsepowers && this.EngineCapacity == that.EngineCapacity;
+                return false;
             }
 
-            return false;
+            return this.Brand == item.Brand && this.Model == item.Model && this.Color == item.Color
+                    && this.Fuel == item.Fuel && this.MaxSpeed == item.MaxSpeed
+                    && this.Horsepowers == item.Horsepowers && this.EngineCapacity == item.EngineCapacity;
         }
 
-       
+        public override int GetHashCode()
+        {
+            var hashCode = 793576678;
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Brand);
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Model);
+            hashCode = hashCode * -1521134295 + Color.GetHashCode();
+            hashCode = hashCode * -1521134295 + EqualityComparer<Guid>.Default.GetHashCode(Vin);
+            hashCode = hashCode * -1521134295 + Fuel.GetHashCode();
+            hashCode = hashCode * -1521134295 + MaxSpeed.GetHashCode();
+            hashCode = hashCode * -1521134295 + Horsepowers.GetHashCode();
+            hashCode = hashCode * -1521134295 + EngineCapacity.GetHashCode();
+            return hashCode;
+        }
     }
 }

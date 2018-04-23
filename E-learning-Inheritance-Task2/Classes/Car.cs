@@ -1,4 +1,5 @@
 ﻿using E_learning_Inheritance_Task2.Enumerations;
+using System;
 
 namespace E_learning_Inheritance_Task2.Classes
 {
@@ -22,19 +23,28 @@ namespace E_learning_Inheritance_Task2.Classes
 
         public override double CalculateFuelConsumption(double averageSpeed)
         {
-            double resistanceСoefficient = hasRailsOnRoof ? 1.11 : 1; 
+            double resistanceСoefficient = hasRailsOnRoof ? 1.11 : 1;
             return base.CalculateFuelConsumption(averageSpeed) * resistanceСoefficient;
         }
 
-        //public override bool Equals(Object obj)
-        //{
-        //    if (obj is Car)
-        //    {
-        //        var that = obj as Car;
-        //        return this.Equals(that) && this.hasRailsOnRoof == that.hasRailsOnRoof;
-        //    }
+        public override bool Equals(Object obj)
+        {
+            var item = obj as Car;
 
-        //    return false;
-        //}
+            if (item == null)
+            {
+                return false;
+            }
+
+            return base.Equals(item) && this.hasRailsOnRoof == item.hasRailsOnRoof ;
+        }
+
+        public override int GetHashCode()
+        {
+            var hashCode = 1315985931;
+            hashCode = hashCode * -1521134295 + base.GetHashCode();
+            hashCode = hashCode * -1521134295 + hasRailsOnRoof.GetHashCode();
+            return hashCode;
+        }
     }
 }
