@@ -40,7 +40,6 @@ namespace E_learning_Inheritance_Task2
             var distance = Utils.KilometersToMeters(1);
             var speed = Utils.KilometersPerHourToMetersPerSecond(averageSpeed);
             var ece = Utils.GetEceByFuelType(this.Fuel);
-
             var result = watts * distance / (speed * ece * Utils.benzinHeatOfCombustion);
             return result;
         }

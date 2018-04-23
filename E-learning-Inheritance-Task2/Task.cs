@@ -6,7 +6,6 @@ namespace E_learning_Inheritance_Task2
 {
     public class Task
     {
-
         public static void SortByEnginePower(IList<Automobile> automobiles)
         {
            automobiles =  automobiles.OrderBy( p => p.Horsepowers).ToList();
