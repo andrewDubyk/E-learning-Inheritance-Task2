@@ -1,6 +1,7 @@
 ﻿using E_learning_Inheritance_Task2.Classes;
 using E_learning_Inheritance_Task2.Enumerations;
 using System;
+using System.Collections.Generic;
 
 namespace E_learning_Inheritance_Task2
 {
@@ -55,5 +56,20 @@ namespace E_learning_Inheritance_Task2
                 $"horse powers : {this.Horsepowers}\n" +
                 $"engine capactiy : {this.EngineCapacity}\n");
         }
+
+        public override bool Equals(Object obj)
+        {
+            if (obj is Automobile)
+            {
+                var that = obj as Automobile;
+                return this.Brand == that.Brand && this.Model == that.Model && this.Color == that.Color
+                    && this.Vin == that.Vin && this.Fuel == that.Fuel && this.MaxSpeed == that.MaxSpeed
+                    && this.Horsepowers == that.Horsepowers && this.EngineCapacity == that.EngineCapacity;
+            }
+
+            return false;
+        }
+
+       
     }
 }

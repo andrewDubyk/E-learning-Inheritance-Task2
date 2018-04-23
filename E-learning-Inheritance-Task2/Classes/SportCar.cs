@@ -30,5 +30,17 @@ namespace E_learning_Inheritance_Task2.Classes
         {
             return base.ToString() + string.Format($"exhaustSystemBrand : {Enum.GetName(typeof(ExhaustSystemsBrands), this.exhaustSystemBrand)}\n");
         }
+
+        public override bool Equals(Object obj)
+        {
+            if (obj is SportCar)
+            {
+                var that = obj as SportCar;
+                return this.Equals(that) && this.exhaustSystemBrand == that.exhaustSystemBrand;
+            }
+
+            return false;
+        }
+
     }
 }

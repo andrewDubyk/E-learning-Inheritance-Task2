@@ -24,5 +24,16 @@ namespace E_learning_Inheritance_Task2.Classes
         {
             return base.CalculateFuelConsumption(averageSpeed) * WeightTypes.GetCoefficient(trailerWeightType);
         }
+
+        //public override bool Equals(Object obj)
+        //{
+        //    if (obj is Truck)
+        //    {
+        //        var that = obj as Truck;
+        //        return this.Equals(that) && this.trailerWeightType == that.trailerWeightType;
+        //    }
+
+        //    return false;
+        //}
     }
 }

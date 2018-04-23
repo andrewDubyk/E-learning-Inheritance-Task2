@@ -25,5 +25,16 @@ namespace E_learning_Inheritance_Task2.Classes
             double resistanceСoefficient = hasRailsOnRoof ? 1.11 : 1; 
             return base.CalculateFuelConsumption(averageSpeed) * resistanceСoefficient;
         }
+
+        //public override bool Equals(Object obj)
+        //{
+        //    if (obj is Car)
+        //    {
+        //        var that = obj as Car;
+        //        return this.Equals(that) && this.hasRailsOnRoof == that.hasRailsOnRoof;
+        //    }
+
+        //    return false;
+        //}
     }
 }

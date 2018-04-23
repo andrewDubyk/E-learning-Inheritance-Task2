@@ -6,17 +6,17 @@ namespace E_learning_Inheritance_Task2
 {
     public class Task
     {
-        public static void SortByEnginePower(IList<Automobile> automobiles)
+        public static List<Automobile> SortByEnginePower(List<Automobile> automobiles)
         {
-           automobiles =  automobiles.OrderBy( p => p.Horsepowers).ToList();
+            return automobiles.OrderBy(p => p.Horsepowers).ToList();
         }
 
-        public static Automobile FindEconomical(IList<Automobile> automobiles , double avgSpeed)
+        public static Automobile FindEconomical(List<Automobile> automobiles , double avgSpeed)
         {
             return automobiles.OrderBy(p => p.CalculateFuelConsumption(avgSpeed)).FirstOrDefault();
         }
 
-        public static Automobile FindTheFastest(IList<Automobile> automobiles)
+        public static Automobile FindTheFastest(List<Automobile> automobiles)
         {
             return automobiles.OrderBy(p => p.MaxSpeed).LastOrDefault();
         }
