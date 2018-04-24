@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27428.2015
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-learning-Inheritance-Task2", "E-learning-Inheritance-Task2\E-learning-Inheritance-Task2.csproj", "{8A8CAF32-CEB3-46AC-9165-99696EF1C904}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-learning-Inheritance-Task2Tests", "E-learning-Inheritance-Task2Tests\E-learning-Inheritance-Task2Tests.csproj", "{C61C4BE9-B0DF-4C5A-848B-6A3826015C2C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{8A8CAF32-CEB3-46AC-9165-99696EF1C904}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A8CAF32-CEB3-46AC-9165-99696EF1C904}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A8CAF32-CEB3-46AC-9165-99696EF1C904}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C61C4BE9-B0DF-4C5A-848B-6A3826015C2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C61C4BE9-B0DF-4C5A-848B-6A3826015C2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C61C4BE9-B0DF-4C5A-848B-6A3826015C2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C61C4BE9-B0DF-4C5A-848B-6A3826015C2C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
