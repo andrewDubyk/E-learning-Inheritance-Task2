@@ -24,7 +24,7 @@ namespace E_learning_Inheritance_Task2
 
             List<Automobile> sorted = Task.SortByEnginePower(automobiles);
             Console.WriteLine("\t\t\t Automobiles sorted by hourspowers \n");
-            Task.Print(automobiles);
+            Task.Print(sorted);
 
             foreach(var a in automobiles)
             {
