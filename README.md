@@ -6,7 +6,7 @@ Homework inheritance
 
 ## Завдання №2 
 
-![](https://github.com/andrewDubyk/E-learning-Inheritance-Task2/blob/dev/docs/inheritance_task2.png)
+![](https://github.com/andrewDubyk/E-learning-Inheritance-Task2/blob/master/docs/inheritance_task2.png)
 
 ## Команда
 
