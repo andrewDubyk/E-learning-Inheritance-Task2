@@ -26,6 +26,11 @@ namespace E_learning_Inheritance_Task2.Classes
             return base.CalculateFuelConsumption(averageSpeed) * WeightTypes.GetCoefficient(trailerWeightType);
         }
 
+        public override string ToString()
+        {
+            return base.ToString() + string.Format($"Trailer weight type : {Enum.GetName(typeof(TrailerWeightTypes), this.trailerWeightType)}\n");
+        }
+
         public override bool Equals(Object obj)
         {
             var item = obj as Truck;

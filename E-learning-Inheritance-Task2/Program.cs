@@ -9,12 +9,13 @@ namespace E_learning_Inheritance_Task2
     {
         static void Main(string[] args)
         {
+
             List<Automobile> automobiles = new List<Automobile>
-            {
-                {new Truck("volvo","fx23",(Colors)2,(FuelTypes)1,800,430,2,(TrailerWeightTypes)2)},
-                {new SportCar("nissan","gtr",(Colors)4,(FuelTypes)0,200,480,2,(ExhaustSystemsBrands)2)},
-                {new SportCar("ford","mustang",(Colors)3,(FuelTypes)1,230,380,2.4,(ExhaustSystemsBrands)5)}
-            };
+                {
+                    {new Truck("volvo","fx23",(Colors)2,(FuelTypes)1,800,430,2,(TrailerWeightTypes)2)},
+                    {new SportCar("nissan","gtr",(Colors)4,(FuelTypes)0,200,480,2,(ExhaustSystemsBrands)2)},
+                    {new SportCar("ford","mustang",(Colors)3,(FuelTypes)1,230,380,2.4,(ExhaustSystemsBrands)5)}
+                };
 
             Console.WriteLine("\t\t\t The most economical \n");
             Console.WriteLine(Task.FindEconomical(automobiles, 80));
@@ -27,6 +28,8 @@ namespace E_learning_Inheritance_Task2
             Task.Print(sorted);
 
             Console.ReadKey();
+
+
         }
     }
 }

@@ -13,7 +13,7 @@ namespace E_learning_Inheritance_Task2.Tests
                 {new Truck("volvo","fx23",(Colors)2,(FuelTypes)1,800,430,2,(TrailerWeightTypes)2)},
                 {new SportCar("nissan","gtr",(Colors)4,(FuelTypes)0,200,480,2,(ExhaustSystemsBrands)2)},
                 {new SportCar("bugatti","chiron",(Colors)2,(FuelTypes)1,420,295,8,(ExhaustSystemsBrands)3)},
-                {new Car("vaz","2101",(Colors)4,(FuelTypes)0,100,60,1.2,false)},
+                {new Car("vaz","2101",(Colors)4,(FuelTypes)0,100,60,1.2,(RoofTypes)0)},
                 {new Truck("mercedes-benz","actros",(Colors)0,(FuelTypes)1,300,490,12,(TrailerWeightTypes)2)},
                 {new SportCar("acura","nsx",(Colors)3,(FuelTypes)1,307,570,3.5,(ExhaustSystemsBrands)5)},
                 {new Truck("iveko","powerstar",(Colors)1,(FuelTypes)0,220,390,2.2,(TrailerWeightTypes)1)}
@@ -25,7 +25,7 @@ namespace E_learning_Inheritance_Task2.Tests
         {           
             List<Automobile> expected = new List<Automobile>
             {
-                {new Car("vaz","2101",(Colors)4,(FuelTypes)0,100,60,1.2,false)},
+                {new Car("vaz","2101",(Colors)4,(FuelTypes)0,100,60,1.2,(RoofTypes)0)},
                 {new SportCar("bugatti","chiron",(Colors)2,(FuelTypes)1,420,295,8,(ExhaustSystemsBrands)3)},
                 {new Truck("iveko","powerstar",(Colors)1,(FuelTypes)0,220,390,2.2,(TrailerWeightTypes)1)},
                 {new Truck("volvo","fx23",(Colors)2,(FuelTypes)1,800,430,2,(TrailerWeightTypes)2)},

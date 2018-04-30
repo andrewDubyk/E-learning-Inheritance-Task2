@@ -5,7 +5,7 @@ namespace E_learning_Inheritance_Task2.Classes
 {
     public class Car : Automobile
     {
-        private bool hasRailsOnRoof;
+        private RoofTypes roofType;
 
         public Car(
             string _brand,
@@ -15,16 +15,20 @@ namespace E_learning_Inheritance_Task2.Classes
             uint _maxSpeed,
             double _horsepowers,
             double _engineCapacity,
-            bool _hasRailsOnRoof)
+            RoofTypes _roofType)
             : base(_brand, _model, _color, _fuel, _maxSpeed, _horsepowers, _engineCapacity)
         {
-            this.hasRailsOnRoof = _hasRailsOnRoof;
+            this.roofType = _roofType;
         }
 
         public override double CalculateFuelConsumption(double averageSpeed)
         {
-            double resistanceСoefficient = hasRailsOnRoof ? 1.11 : 1;
-            return base.CalculateFuelConsumption(averageSpeed) * resistanceСoefficient;
+            return base.CalculateFuelConsumption(averageSpeed) * Roofs.GetCoefficient(roofType);          
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + string.Format($"Roof type : {Enum.GetName(typeof(RoofTypes), this.roofType)}\n");
         }
 
         public override bool Equals(Object obj)
@@ -36,14 +40,14 @@ namespace E_learning_Inheritance_Task2.Classes
                 return false;
             }
 
-            return base.Equals(item) && this.hasRailsOnRoof == item.hasRailsOnRoof ;
+            return base.Equals(item) && this.roofType == item.roofType;
         }
 
         public override int GetHashCode()
         {
             var hashCode = 1315985931;
             hashCode = hashCode * -1521134295 + base.GetHashCode();
-            hashCode = hashCode * -1521134295 + hasRailsOnRoof.GetHashCode();
+            hashCode = hashCode * -1521134295 + roofType.GetHashCode();
             return hashCode;
         }
     }
