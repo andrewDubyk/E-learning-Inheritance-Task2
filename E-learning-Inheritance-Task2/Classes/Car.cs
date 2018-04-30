@@ -26,6 +26,11 @@ namespace E_learning_Inheritance_Task2.Classes
             return base.CalculateFuelConsumption(averageSpeed) * Roofs.GetCoefficient(roofType);          
         }
 
+        public override string ToString()
+        {
+            return base.ToString() + string.Format($"Roof type : {Enum.GetName(typeof(RoofTypes), this.roofType)}\n");
+        }
+
         public override bool Equals(Object obj)
         {
             var item = obj as Car;
