@@ -46,6 +46,7 @@
     <Compile Include="Classes\Car.cs" />
     <Compile Include="Classes\SportCar.cs" />
     <Compile Include="Classes\Truck.cs" />
+    <Compile Include="Enumerations\RoofTypes.cs" />
     <Compile Include="Task.cs" />
     <Compile Include="Utils.cs" />
     <Compile Include="Enumerations\Colors.cs" />
